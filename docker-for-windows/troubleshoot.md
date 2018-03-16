@@ -267,6 +267,15 @@ script](https://github.com/moby/moby/issues/24388).
 
 ### Virtualization
 
+In order for Docker for Windows to function properly your machine needs:
+
+1. [Hyper-V](https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-technology-overview) installed and working
+
+2. Virtualization enabled
+
+Note: If your OS is lower than Windows 10 PRO, you can use [docker-toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)
+
+
 #### Hyper-V
 
 Docker for Windows requires a Hyper-V as well as the Hyper-V Module for Windows
@@ -281,8 +290,8 @@ Virtualization needs to be enabled in the BIOS. The steps to do so are Vendor
 specific, but typically the BIOS option is called `Virtualization Technology
 (VTx)` or similar.
 
-Once Hyper-V is enabled, it shows up as such on "Turn Windows features on or
-off".
+From the START menu enter in "Turn Windows features on or
+off" and hit enter and verify Hyper-V is enabled and has a checkmark:
 
 ![Hyper-V on Windows features](images/hyper-v-enable-status.png)
 
@@ -316,6 +325,12 @@ Also, see the user-reported issue [Unable to run Docker for Windows on Windows
 10 Enterprise](https://github.com/docker/for-win/issues/74).
 
 
+### Virtualization on Windows Bootcamp (Mac)
+
+If you are on a capable Mac machine using [Bootcamp](https://support.apple.com/en-us/HT201468) to run Windows10 Pro, you can enable virtualization by setting Bootcamp/Windows as the system startup disk:
+
+(Apple Menu in top left) > System Preferences > Target Disk > Bootcamp
+
 ### Networking and WiFi problems upon Docker for Windows install
 
 Some users have encountered networking issues during install and startup of
@@ -339,7 +354,7 @@ Here are some steps to take if you encounter similar problems:
    Open the **Hyper-V Manager**. (On Windows 10, just search for the Hyper-V
    Manager in the search field in the lower left search field.)
 
-   Select the Virtual Switch Manager on the left-side **Actions** panel.
+   Select the Virtual Switch Manager on the right-side **Actions** panel.
 
    ![Hyper-V manager](images/hyperv-manager.png)
 
